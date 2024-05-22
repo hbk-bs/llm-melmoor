@@ -3,33 +3,55 @@
   font-family: system-ui, sans-serif;
   font-weight: normal;
 }
+
 html {
   font-size: 18px;
 }
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #000000;
+  color: #ffffff;
   height: 100vh;
   margin: 0 auto;
-  width: 50vw;
 }
 
+
+
 button {
-  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 10px 20px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
+  border-radius: 50%; /* Setze den border-radius auf 50% für einen runden Button */
+  background-color: #ffffff;
+  color: black; /* Textfarbe auf Schwarz setzen */
   cursor: pointer;
-  width: 10rem;
+  width: 200px; /* Du kannst die Breite anpassen */
+  height: 200px; /* Du kannst die Höhe anpassen */
   font-style: oblique;
   font-weight: bold;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
+
+
+
+
+
 button:hover {
-  background-color: #0056b3;
+  background-color: #fae155;
+}
+
+#response {
+  font-size: 30px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
 }

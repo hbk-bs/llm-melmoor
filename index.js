@@ -27,20 +27,18 @@
 import { LLM } from './llm.js';
 
 // create an instance of the class
-// you need to insert the run url for your val.town openai api
-// @ff6347 will instruct you on how to get this
-
 const llm = new LLM({
-  host: '<insert run url for your val.town openai api here>',
+  host: 'https://melmoor-openai_api.web.val.run/',
 });
 
-// get the button#run element from the index.html
+// get the button#run and div#response elements from the index.html
 const chatButton = document.getElementById('run');
+const responseDiv = document.getElementById('response');
 
 // add a click event listener to the button that runs the async function
 chatButton.addEventListener('click', async () => {
   // some options for the chat
-  const format = 'json'; // we want json output
+  const format = 'text'; // we want text output
   // we set the seed so we get always the same output
   // we set the temperature which controls the creativity of the model
   const options = {
@@ -52,19 +50,49 @@ chatButton.addEventListener('click', async () => {
   const messages = [
     {
       role: 'system',
-      content:
-        'You are a helpful assistant. Always repond in JSON and only JSON',
+      content: 'You are a helpful assistant. Always respond with a picture made of punctuation marks. Without letters!.Create a different random picture of a sky full of stars, a moon, and different planets. Do not use emojis.create a minimum of 1000 signs',
     },
-    { role: 'user', content: 'What is the capital of the United States?' },
+    { role: "assistant",
+  content: `° 　. ● . ★ ° . *　　　° * 　.　 :　　:●. 　 *° :●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° . *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　° :●. 　 *° :●. 　 *★ ° . *º :●: :
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　° :
+°☆ 　. * ● ¸. 　　　★ 　:●. 　 *° :●. 　 *☆
+° :. 　 * •★ ° . *　　　°　.　°☆.　 * 　.　
+　★　　　　. 　 ° 　. . 　 ★ 　　　　　　. * ● ¸ . 　　　★ 　° :●. 　 *:●. 　 *°:●. 　 *° :●. 　 *☆:●. 　 *° :●. 　 *☆
+• ○ ° ★　 .　 * 　.　 　　　　　.:●. 　 *° . 　 *☆
+　 ° 　. ● . ★ ° . *　　　°　　. * ● ¸ . ° :●. 　 *
+　ﾟ ＊ ·̩　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
+★　★ ° . *　　★ ° .★ ° . *　　　°　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
+　 ° 　. ● . ★ ° . *　　　° * 　.　 :　　:●. 　 *° :●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° . *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　° :●. 　 *° :●. 　 *★ ° . *º :●: :
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
+　 ° 　. ● . ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　° :
+°☆ 　. * ● ¸. 　　　★ 　:●. 　 *°"`
+},
+
+    {
+      role: 'user',
+      content: 'Create the sky',
+    }
   ];
 
   try {
     // now we make the call to the api.
-    // we wrap it in a try catch block to catch any errors
+    // we wrap it in a try-catch block to catch any errors
     const response = await llm.chat({ format, options, messages });
-    console.log(response);
+    const result = response.completion.choices[0].message.content;
+    console.log(result);
+    // update the content of the response div
+    responseDiv.textContent = result;
   } catch (error) {
     // we had an error lets handle it
-    console.error(error);
+    console.error('Error:', error);
   }
 });
