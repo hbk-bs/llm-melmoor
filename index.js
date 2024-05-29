@@ -50,32 +50,46 @@ chatButton.addEventListener('click', async () => {
   const messages = [
     {
       role: 'system',
-      content: 'You are a helpful assistant. Always respond with a picture made of punctuation marks. Without letters!.Create a different random picture of a sky full of stars, a moon, and different planets. Do not use emojis.create a minimum of 1000 signs',
+      content: `You are a helpful assistant. Always respond with a picture made of punctuation marks and a short poem about cats. The picture is without letters! Create a different random picture of a sky full of stars, a moon, and different planets. Do not use emojis.create a minimum of 100 signs.
+      
+   "
+      `,
     },
     { role: "assistant",
-  content: `° 　. ● . ★ ° . *　　　° * 　.　 :　　:●. 　 *° :●. 　 *
+  content:   `{sky": "° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
 .　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
-· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° . *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　° :●. 　 *° :●. 　 *★ ° . *º :●: :
+　　　　　　　　　　　　　　　　　　　　　　　　
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° 　　　　　　　　　　　　　　　　　　. *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
 • ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
-° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
-　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　° :
-°☆ 　. * ● ¸. 　　　★ 　:●. 　 *° :●. 　 *☆
-° :. 　 * •★ ° . *　　　°　.　°☆.　 * 　.　
-　★　　　　. 　 ° 　. . 　 ★ 　　　　　　. * ● ¸ . 　　　★ 　° :●. 　 *:●. 　 *°:●. 　 *° :●. 　 *☆:●. 　 *° :●. 　 *☆
-• ○ ° ★　 .　 * 　.　 　　　　　.:●. 　 *° . 　 *☆
-　 ° 　. ● . ★ ° . *　　　°　　. * ● ¸ . ° :●. 　 *
-　ﾟ ＊ ·̩　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
-★　★ ° . *　　★ ° .★ ° . *　　　°　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
-　 ° 　. ● . ★ ° . *　　　° * 　.　 :　　:●. 　 *° :●. 　 *
-.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
-· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° . *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　° :●. 　 *° :●. 　 *★ ° . *º :●: :
+　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 *☆
+　　　　　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+°  . 　 * •★　　　　　　　　　　　　 ° . *　　　　　　　　　　　　　　　　　　　　　°　.　°☆.　 * 　.　
+　★　　　　. 　 ° 　. . 　 ★ 　　　　　　. * ● ¸ . 　　　★ 　°  ●. 　 * ●. 　 *° ●. 　 *°  ●. 　 *☆ ●. 　 *°  ●. 　 *☆
+• ○ ° ★　 .　 * 　.　 　　　　　. ●. 　 *° . 　 *☆
+　 ° 　. ● . ★ ° . *　　　°　　. * ● ¸ . °  ●. 　 *
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+　ﾟ ＊ ·̩　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　　　　　　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
+★　★ ° . *　　★ ° .★ ° . *　　　°　　　　　　　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
+　 ° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　　　　　　　　　　　　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° .　　　　　　　　　　　　　　　　　　　　　　　　 *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
 • ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
-° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
-　 ° 　. ● . ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
-° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　° :
-　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　° :
-°☆ 　. * ● ¸. 　　　★ 　:●. 　 *°"`
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● .　　　　　　　　　　　　　　　　　　　　　　　　 ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°"
+`
 },
+
 
     {
       role: 'user',
@@ -88,9 +102,33 @@ chatButton.addEventListener('click', async () => {
     // we wrap it in a try-catch block to catch any errors
     const response = await llm.chat({ format, options, messages });
     const result = response.completion.choices[0].message.content;
-    console.log(result);
+    console.log(result)
+    const sky = (response.completion.choices[0].message.content)
+
+  
     // update the content of the response div
-    responseDiv.textContent = result;
+    responseDiv.textContent = sky;
+
+  
+    // Get the poem about cats
+    const poemResponse = await llm.chat({
+      format,
+      options,
+      messages: [
+        { role: "system", content: "You write poems about cats." },
+        { role: "user", content: "Write a poem about cats." }
+      ]
+    });
+    const poem = poemResponse.completion.choices[0].message.content;
+
+    // Append the poem to the response div with a specific class
+const poemElement = document.createElement('p');
+poemElement.textContent = poem;
+poemElement.classList.add('poem'); // Add a specific class for the poem
+responseDiv.appendChild(poemElement);
+
+
+    console.log(poem);
   } catch (error) {
     // we had an error lets handle it
     console.error('Error:', error);

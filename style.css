@@ -41,10 +41,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-
-
-
-
 button:hover {
   background-color: #fae155;
 }
@@ -54,4 +50,12 @@ button:hover {
   text-align: center;
   color: #ffffff;
   width: 100%;
+}
+
+/* Beispiel CSS-Stileigenschaften für das Gedicht */
+.poem {
+  font-family: Arial, sans-serif; /* Textart */
+  font-size: 16px; /* Textgröße */
+  line-height: 1.5; /* Zeilenhöhe */
+  color: #ffffff; /* Textfarbe */
 }
