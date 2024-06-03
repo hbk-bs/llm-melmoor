@@ -37,6 +37,11 @@ const responseDiv = document.getElementById('response');
 
 // add a click event listener to the button that runs the async function
 chatButton.addEventListener('click', async () => {
+  console.log("click");
+
+   // Start blinking
+   chatButton.classList.add('blinking');
+
   // some options for the chat
   const format = 'text'; // we want text output
   // we set the seed so we get always the same output
@@ -50,13 +55,10 @@ chatButton.addEventListener('click', async () => {
   const messages = [
     {
       role: 'system',
-      content: `You are a helpful assistant. Always respond with a picture made of punctuation marks and a short poem about cats. The picture is without letters! Create a different random picture of a sky full of stars, a moon, and different planets. Do not use emojis.create a minimum of 100 signs.
-      
-   "
-      `,
+      content: `You are a helpful assistant. Always respond with a different picture made of punctuation marks WITHOUT and a short poem. The picture is without letters!!! Create a different picture of a sky full of stars with these signs ° 　. ● . ★. ☆°  Do not use emojis! create a minimum of 100 signs.`,
     },
     { role: "assistant",
-  content:   `{sky": "° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+  content:   `° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
 .　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
 　　　　　　　　　　　　　　　　　　　　　　　　
 · 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° 　　　　　　　　　　　　　　　　　　. *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
@@ -64,14 +66,7 @@ chatButton.addEventListener('click', async () => {
 　　　　　　　　　　　　　　　　　　　　　　　　
 ° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
 　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
-°☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 *☆
-　　　　　　　　　　　　　　　　　　　　　　　　
-　　　　　　　　　　　　　　　　　　　　　　　　
-°  . 　 * •★　　　　　　　　　　　　 ° . *　　　　　　　　　　　　　　　　　　　　　°　.　°☆.　 * 　.　
-　★　　　　. 　 ° 　. . 　 ★ 　　　　　　. * ● ¸ . 　　　★ 　°  ●. 　 * ●. 　 *° ●. 　 *°  ●. 　 *☆ ●. 　 *°  ●. 　 *☆
-• ○ ° ★　 .　 * 　.　 　　　　　. ●. 　 *° . 　 *☆
-　 ° 　. ● . ★ ° . *　　　°　　. * ● ¸ . °  ●. 　 *
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+°☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 　　　　　　　　　　　　　　　　　　　　　　　　
 　　　　　　　　　　　　　　　　　　　　　　　　
 　ﾟ ＊ ·̩　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　　　　　　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
@@ -86,8 +81,84 @@ chatButton.addEventListener('click', async () => {
 ° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
-°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°"
-`
+°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°`
+},
+
+{ role: "assistant",
+  content:   `　　　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° .　　　　　　　　　　　　　　　　　　　　　　　　 *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● .　　　　　　　　　　　　　　　　　　　　　　　　 ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
+　　　　　　　　　　　　　　　　　　　　　　　　
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° 　　　　　　　　　　　　　　　　　　. *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+　ﾟ ＊ ·̩　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　　　　　　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
+★　★ ° . *　　★ ° .★ ° . *　　　°　　　　　　　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
+　 ° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　　`
+},
+
+{ role: "assistant",
+  content:   `　　　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° .　　　　　　　　　　　　　　　　　　　　　　　　 *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ● ¸ . 　　　★ 　°  
+°☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
+　　　　　　　　　　　　　　　　　　　　　　　　
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　.　　　　　　　　　　　　　　　　　　　　
+　ﾟ ＊ ·̩ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● .　　　　　　　　　　　　　　　　　　　　　　　　 ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+ 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° 　　　　　　　　　　　　　　　　　　. *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● . ★ ° . *　　　°　.　 *　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　　　　　　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
+★　★ ° . *　　★ ° .★ ° . *　　　°　　　　　　　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
+　 ° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　　`
+},
+
+
+{ role: "assistant",
+  content:   `　　　　 * ⋆ 　 .
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　. 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° .　　　　　　　　　　　　　　　　　　　　　　　　 *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ● ¸ . 　　　★ 　°  
+° *　　　°　. * ● ¸ . 　　　★ 　°  
+ 　★ ° . *　　　°　.　°☆° 　. ● . ★ ° 　　　　　　　　　　　　　　　　　　. *★ ° . *　　　°　.　°☆★ ° . * *☆°. ☆. * ● ¸ . 　　　★ 　°  ●. 　 *°  ●. 　 *★ ° . *º  ●   
+• ○ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● . ★ ° . *　　　°　.　 *　　 ｡　☆　　　ﾟ ＊ 　 ｡*　　　　　　　　+　 　＊ 　･ ｡　ﾟ ＊ 　☆　　★ ° . *　　　°　.　°☆　*
+★　★ ° . *　　★ ° .★ ° . *　　　°　　　　　　　.　°☆ *　　　°　.　°☆　°　.　°☆°☆　. * ● ¸ . 　　　
+　 ° 　. ●☆ 　. * 　　　　　　　　　　　　● ¸. 　　　★ 　 ●. 　 *°  ●. 　 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　 ° 　. ● . ★ ° . *　　　°　.　 * ● ¸ . 　　　★ 　°  
+°☆ 　. * ● ¸. 　　　★ 　 ●. 　 *°° 　. ● . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　 * ⋆ 　 .
+　　　　　　　　　　　　　　　　　　　　　　　　
+· 　　 ⋆ ˚ ˚ 　　 ✦⋆ · 　 *⋆ ✧　 　 · 　 ✧　✵　　.　　　　　　　　　　　　　　　　　　　　
+　ﾟ ＊ ·̩ ° ★　 .　 * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+° 　. ● . ★ ° . *　　　°　. * ● ¸ . 　　　★ 　°  
+　 ° 　. ● .　　　　　　　　　　　　　　　　　　　　　　　　 ★ ° . *　　　★   ★ * 　.　 ○ ° ★　 .　 * 　. * ● ¸ . 　★ ° . *★　 　　　　　
+° 　. ● . ★ ° . . ★ ° . *　　　° * 　.　  　　 ●. 　 *°  ●. 　 *
+.　 * 　.　 　 ˚ *.　　 *　　　`
 },
 
 
@@ -115,8 +186,8 @@ chatButton.addEventListener('click', async () => {
       format,
       options,
       messages: [
-        { role: "system", content: "You write poems about cats." },
-        { role: "user", content: "Write a poem about cats." }
+        { role: "system", content: "You write poems about sleep." },
+        { role: "user", content: "Write a short poem about sleeping." }
       ]
     });
     const poem = poemResponse.completion.choices[0].message.content;
@@ -127,10 +198,12 @@ poemElement.textContent = poem;
 poemElement.classList.add('poem'); // Add a specific class for the poem
 responseDiv.appendChild(poemElement);
 
-
-    console.log(poem);
+console.log(poem);
   } catch (error) {
-    // we had an error lets handle it
+    // we had an error let's handle it
     console.error('Error:', error);
+  } finally {
+    // Stop blinking
+    chatButton.classList.remove('blinking');
   }
 });

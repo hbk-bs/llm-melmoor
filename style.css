@@ -16,10 +16,8 @@ body {
   background-color: #000000;
   color: #ffffff;
   height: 100vh;
-  margin: 0 auto;
+  padding: 0 20px; /* Horizontales Padding für den Abstand zum Rand */
 }
-
-
 
 button {
   position: absolute;
@@ -27,16 +25,15 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
-  border-radius: 50%; /* Setze den border-radius auf 50% für einen runden Button */
+  border-radius: 50%;
   background-color: #ffffff;
-  color: black; /* Textfarbe auf Schwarz setzen */
+  color: black;
   cursor: pointer;
-  width: 200px; /* Du kannst die Breite anpassen */
-  height: 200px; /* Du kannst die Höhe anpassen */
-  font-style: oblique;
-  font-weight: bold;
+  width: 200px;
+  height: 200px;
+  font-family: 'Cherry Cream Soda', cursive;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
 }
@@ -45,17 +42,34 @@ button:hover {
   background-color: #fae155;
 }
 
+
 #response {
-  font-size: 30px;
+  font-size: 50px;
   text-align: center;
-  color: #ffffff;
   width: 100%;
+  transition: color 0.3s ease; /* Übergang für die Farbänderung hinzufügen */
 }
 
-/* Beispiel CSS-Stileigenschaften für das Gedicht */
+#response:hover {
+  color: #fae155; /* Textfarbe auf Gelb ändern */
+}
+
 .poem {
-  font-family: Arial, sans-serif; /* Textart */
-  font-size: 16px; /* Textgröße */
-  line-height: 1.5; /* Zeilenhöhe */
-  color: #ffffff; /* Textfarbe */
+  font-family: 'Cherry Cream Soda', cursive;
+  font-size: 25px;
+  line-height: 1.5;
+  position: absolute; /* Absolute Positionierung für den Text */
+  bottom: 100px; /* Text etwas höher positionieren */
+  color: #ffffff;
+}
+
+
+@keyframes blink {
+  0% { background-color: #ffffff; }
+  50% { background-color: #fae155; }
+  100% { background-color: #ffffff; }
+}
+
+.blinking {
+  animation: blink 1s infinite;
 }
